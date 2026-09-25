@@ -5,12 +5,15 @@ from .models import Book, Author
 
 
 class BookAdmin(admin.ModelAdmin):
-    list_display = ["title", "pub_date", "get_authors"]
+    list_display = ["title", "pub_date", "get_authors", "authors_count"]
 
-    def get_authors(self, obj):
+    def get_authors(self, obj) -> str:
         return ", ".join([author.full_name for author in obj.authors.all()])
 
     get_authors.short_description = "Authors"  # Column header
+
+    def authors_count(self, obj) -> int:
+        return obj.authors.count()
 
 
 admin.site.register(Book, BookAdmin)

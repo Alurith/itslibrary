@@ -1,0 +1,8 @@
+{% extends 'library/base.html'%}
+
+{% block main %}
+  {% for book in object_list %}
+    {{book.title}} - {{book.get_genere_display}} 
+  {% endfor %}
+{% endblock %}
+
