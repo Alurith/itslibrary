@@ -11,10 +11,9 @@ class IndexView(generic.ListView):
     template_name = "library/index.html"
     model = Book
 
-    # def get_queryset(self):
-    #   qs = Book.objects.all()
-    #   qs = qs.filter(genere="DB")
-    #   return qs
+    def get_queryset(self):
+        qs = Book.objects.prefetch_related("authors").all()
+        return qs
 
 
 class BookDetailView(DetailView):
