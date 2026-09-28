@@ -1,6 +1,9 @@
 from django.views import generic
 from django.views.generic.detail import DetailView
-from .models import Book
+from .models import Book, Reservation
+from .forms import ReservationForm
+
+from django.urls import reverse_lazy
 # Create your views here.
 
 
@@ -17,3 +20,10 @@ class IndexView(generic.ListView):
 class BookDetailView(DetailView):
     model = Book
     template_name = "library/book.html"
+
+
+class AddReservationView(generic.CreateView):
+    model = Reservation
+    form_class = ReservationForm
+    template_name = "library/reserve_book.html"
+    success_url = reverse_lazy("library:index")

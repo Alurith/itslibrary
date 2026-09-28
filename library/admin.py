@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Book, Author
+from .models import Book, Author, Reservation
 
 # Register your models here.
 
@@ -24,3 +24,10 @@ class AuthorAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Author, AuthorAdmin)
+
+
+class ReservationAdmin(admin.ModelAdmin):
+    list_display = ["user__email", "book__title", "start_date", "end_date"]
+
+
+admin.site.register(Reservation, ReservationAdmin)

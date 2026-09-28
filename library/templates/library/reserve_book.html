@@ -10,5 +10,9 @@
 {% endfor %}
 <p>{{object.description}}</p>
 
-<a href='{% url "library:reserve-book" book.pk %}'>Prenota</a>
+<form method="post">
+ {% csrf_token %}
+ {{ form.as_p }}
+ <input type="submit">
+</form>
 {% endblock %}
