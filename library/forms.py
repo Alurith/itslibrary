@@ -5,4 +5,4 @@ from django import forms
 class ReservationForm(forms.ModelForm):
     class Meta:
         model = Reservation
-        fields = ("book", "user", "duration")
+        fields = ("duration",)

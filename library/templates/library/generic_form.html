@@ -1,0 +1,12 @@
+{% extends 'library/base.html'%}
+
+{% block page_title %}{{object.title}}{% endblock %}
+
+{% block main %}
+<h1>Crea</h1>
+<form method="post">
+ {% csrf_token %}
+ {{ form.as_p }}
+ <input type="submit">
+</form>
+{% endblock %}

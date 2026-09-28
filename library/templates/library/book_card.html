@@ -1,0 +1,16 @@
+<div>
+  <hgroup>
+    <h2>{{book.title}}</h2>
+    <p>{{book.genere}}</p>
+</hgroup>
+<blockquote>
+    {{book.description}}
+  <footer>
+      <cite>— {% for author in book.authors.all %}{{author.full_name}}{% if not forloop.last %}, {% endif %} 
+{% endfor %}</cite>
+  </footer>
+</blockquote>
+
+<a href='{% url "library:book" book.id %}'>Vai alla prenotazione</a>
+
+</div>

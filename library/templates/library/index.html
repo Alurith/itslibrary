@@ -2,7 +2,7 @@
 {% block page_title %}Lista Libri{% endblock %}
 {% block main %}
   {% for book in object_list %}
-    <a href='{% url "library:book" book.id %}'>{{book.title}} - {{book.get_genere_display}}</a>
+    {% include "library/book_card.html" %}
   {% endfor %}
 {% endblock %}
 
