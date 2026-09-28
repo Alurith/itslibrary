@@ -3,5 +3,10 @@
 {% block page_title %}{{object.title}}{% endblock %}
 
 {% block main %}
-{{object}}
+<h1>{{object.title}}</h1>
+<h3>Genere: {{object.get_genere_display}}</h3>
+{% for author in object.authors.all %}
+{{author.full_name}} {% if forloop.last %} {% else %} - {% endif %} 
+{% endfor %}
+<p>{{object.description}}</p>
 {% endblock %}
