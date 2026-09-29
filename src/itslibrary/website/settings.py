@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "library",
+    "itslibrary.library",
     "debug_toolbar",
 ]
 
@@ -52,7 +52,7 @@ MIDDLEWARE = [
     "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
 
-ROOT_URLCONF = "website.urls"
+ROOT_URLCONF = "itslibrary.website.urls"
 
 TEMPLATES = [
     {
@@ -69,7 +69,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = "website.wsgi.application"
+WSGI_APPLICATION = "itslibrary.website.wsgi.application"
 
 
 # Database

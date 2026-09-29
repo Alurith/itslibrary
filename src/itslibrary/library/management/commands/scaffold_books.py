@@ -3,7 +3,7 @@ from datetime import date
 from django.core.management.base import BaseCommand
 from django.utils import timezone
 
-from library.models import Author, Book
+from itslibrary.library.models import Author, Book
 
 
 class Command(BaseCommand):
